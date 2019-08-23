@@ -1,4 +1,4 @@
 class Exhibit < ApplicationRecord
-  has_many :categories
-  has_many :users, through: :catergories
+  belongs_to :user
+  belongs_to :category
 end

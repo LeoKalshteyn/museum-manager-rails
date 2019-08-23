@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2019_08_20_030722) do
   end
 
   create_table "exhibits", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "category_id"
     t.string "name"
     t.string "origin"
     t.string "age"

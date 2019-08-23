@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  belongs_to :user
-  belongs_to :exhibit
+  has_many :exhibits
+  has_many :users, through: :exhibits
 end
