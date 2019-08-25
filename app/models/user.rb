@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :categories
-  has_many :exhibits, through: :categories
+  has_many :exhibits
+  has_many :categories, through: :exhibits
 
   validates :username, :email, presence: true
   validates :email, uniqueness: true

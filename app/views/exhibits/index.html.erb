@@ -1,0 +1,13 @@
+<h3>All Exhibits</h3>
+
+<table>
+  <% @exhibit.each do |exhibit| %>
+  <tr>
+    <td><%= exhibit.name, exhibit_path(exhibit) %> </td>
+    <td><%= exhibit.origin exhibit_path(exhibit) %></td>
+    <td><%= exhibit.age exhibit_path(exhibit) %></td>
+    <td><%= exhibit.user.username%></td>
+  </tr>
+
+  <% end %>
+</table>

@@ -1,11 +1,13 @@
-<h2>Log In</h2>
+<h3>Log in:</h3>
 
-<%= form_tag sessions_path do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %><br>
+  <%= form_for @user, url: '/login' do |f| %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %><br>
+  <%= f.label :username  %>
+  <%= f.text_field :username %><br>
 
-  <%= submit_tag "Sign Up" %>
-<% end %>
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+
+  <%= f.submit "Login" %>
+
+<%end%>
