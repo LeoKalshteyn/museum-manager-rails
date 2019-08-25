@@ -1,13 +1,13 @@
 <h3>All Exhibits</h3>
 
-<table>
-  <% @exhibit.each do |exhibit| %>
-  <tr>
-    <td><%= exhibit.name, exhibit_path(exhibit) %> </td>
+<ol>
+  <% @exhibits.each do |exhibit| %>
+  <li>
+    <td><%= exhibit.name exhibit_path(exhibit) %></td>
     <td><%= exhibit.origin exhibit_path(exhibit) %></td>
     <td><%= exhibit.age exhibit_path(exhibit) %></td>
     <td><%= exhibit.user.username%></td>
-  </tr>
+  </li>
 
   <% end %>
-</table>
+</ol>
