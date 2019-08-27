@@ -1,15 +1,80 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>MuseumManagerRails</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+  <title>Museum Manager</title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <style>
+
+
+   /* Set gray background color and 100% height */
+
+   .sidenav {
+     padding-top: 20px;
+     background-color: #f1f1f1;
+     height: 100%;
+   }
+
+   .bigimg {
+
+   }
+
+   .smallimg {
+
+   }
+
+ </style>
+
+<body class="container-fluid text-center">
+
+     <!-- Top img -->
+
+  <div class="bigimg">
+      <img src="/images/acropolis.jpg" alt="acropolis" style="width: 50%">
+  </div>
+
+    <!-- left nav imgs -->
+
+   <div class="col-sm-2 sidenav">
+     <div class="well">
+       <img src="/images/egyptian.jpg" alt="egyptian" style="width: 100%">
+     </div>
+     <div class="well">
+       <img src="/images/flintlock.jpg" alt="flintlock" style="width: 100%">
+     </div>
+   </div>
+   <div class="col-sm-8 text-left">
+
+     <!-- Header -->
+     <header class="header">
+       <span class="header">Museum Manager</span>
+     </header>
+
+     <!-- right nav imgs -->
+
+   </div>
+   <div class="col-sm-2 sidenav">
+     <div class="well">
+       <img src="/images/painting.jpeg" alt="painting" style="width: 100%">
+     </div>
+     <div class="well">
+       <img src="/images/flintlock.jpg" alt="flintlock" style="width: 100%">
+     </div>
+   </div>
+ </div>
+</div>
+
+<%= yield %>
+
+</body>
 </html>

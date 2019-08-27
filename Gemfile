@@ -36,6 +36,10 @@ gem 'omniauth'
 gem 'omniauth-github'
 
 gem 'dotenv-rails'
+
+gem 'bootstrap', '~> 4.3.1'
+
+gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
