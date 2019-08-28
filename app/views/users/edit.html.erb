@@ -1,1 +1,16 @@
+<h4>Editing <%=@user.username%>'s Profile</h4>
 
+   <%= form_for @user do |f| %>
+
+     <%= f.label :username %>
+     <%= f.text_field :username %>
+
+     <%= f.label :email %>
+     <%= f.email_field :email %>
+
+     <%= f.label :password %>
+     <%= f.password_field :password %>
+
+     <%= f.submit "Update" %>
+
+   <% end %>

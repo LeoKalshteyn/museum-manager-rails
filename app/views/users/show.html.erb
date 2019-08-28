@@ -1,5 +1,14 @@
-<h4><%=@user.username%>'s Profile</h4>
+<h4><%=@user.username%>'s Exhibits</h4>
 
-<%= form_tag logout_path do %>
-  <%= submit_tag "Log Out" %>
-<% end %>
+  <% @user.exhibits.each do |exhibit| %>
+      <p><%= exhibit.name %><p>
+  <% end %>
+
+<div>
+    <div style="display: inline-block;"><%= link_to "View all Categories", categories_path %></div>
+    <div style="display: inline-block;">  </div>
+    <div style="display: inline-block;"><%= link_to "View all Exhibits", exhibits_path %></div>
+    <div style="display: inline-block;">  </div>
+    <div style="display: inline-block;"><%= link_to "Add a New Exhibit", new_exhibit_path %></div>
+    <div style="display: inline-block;">  </div>
+</div>
