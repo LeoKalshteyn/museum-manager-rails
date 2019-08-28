@@ -6,8 +6,8 @@ class CreateExhibits < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :origin
       t.string :age
-      t.datetime :open_date
-      t.datetime :end_date
+      t.string :description
+      t.string :material
 
       t.timestamps
     end

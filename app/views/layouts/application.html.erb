@@ -33,6 +33,21 @@
 
    }
 
+   .header {
+     margin: 0 auto;
+     height: 60px;
+     font-size: 19px;
+   }
+
+   .main-container h4 {
+     margin: 0 auto;
+   }
+
+   .main-container h3 {
+     font-size: 19px;
+     padding-top: 10px;
+   }
+
  </style>
 
 <body class="container-fluid text-center">
@@ -53,16 +68,23 @@
        <img src="/images/flintlock.jpg" alt="flintlock" style="width: 100%">
      </div>
    </div>
-   <div class="col-sm-8 text-left">
+
+
+
+   <div class="col-sm-8 text-center">
+
 
      <!-- Header -->
      <header class="header">
        <span class="header">Museum Manager</span>
      </header>
+<%= yield %>
+
+
+   </div>
 
      <!-- right nav imgs -->
 
-   </div>
    <div class="col-sm-2 sidenav">
      <div class="well">
        <img src="/images/painting.jpeg" alt="painting" style="width: 100%">
@@ -74,7 +96,6 @@
  </div>
 </div>
 
-<%= yield %>
 
 </body>
 </html>
