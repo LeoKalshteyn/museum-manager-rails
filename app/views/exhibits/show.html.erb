@@ -1,17 +1,18 @@
 Exhibit Details:
 
-Exhibit Type: <%= @exhibit.category.exhibit_type %><br>
+Museum: <%= @exhibit.museum.museum_name %><br>
 Name: <%= @exhibit.name %><br>
 Origin: <%= @exhibit.origin %><br>
 Age: <%= @exhibit.age %><br>
 Material: <%= @exhibit.material %><br>
+Culture: <%= @exhibit.culture %><br>
+Exhibit Type: <%= @exhibit.exhibit_type %><br>
 <br> <br>
 Open Date:<%= @exhibit.open_date %><br>
 Close Date <%= @exhibit.close_date %><br>
 
-
 <% if current_user == @exhibit.user %>
-  <%= link_to "Edit Exhibit", edit_category_exhibit_path(@exhibit.category, @exhibit) if @exhibit.category %><br>
+  <%= link_to "Edit Exhibit", edit_museum_exhibit_path(@exhibit.museum, @exhibit) if @exhibit.museum %><br>
 
   <%= link_to 'Delete Exhibit', exhibit_path(@exhibit),
       data: { confirm: 'Are you sure?' }, method: :delete %>

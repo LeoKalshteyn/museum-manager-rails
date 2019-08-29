@@ -1,0 +1,22 @@
+<h3>Museums:</h3><br>
+
+<table>
+  <tr>
+    <h3>Museum Name</h3>
+    <h3>City</h3>
+    <h3>Country</h3>
+  </tr>
+
+  <% @museums.each do |museum| %>
+
+  <tr>
+    <td><%= link_to museum.museum_name, museum_path(museum)%></td>
+    <td><%=museum.city%></td>
+    <td><%=museum.country%></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<%= link_to "View all Exhibits", exhibits_path %> <br>
+<%= link_to "Back to main", user_path(current_user) %> <br>

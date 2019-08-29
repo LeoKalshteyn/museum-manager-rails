@@ -20,10 +20,10 @@ class ExhibitsController < ApplicationController
   def index
     if params[:user_id]
       @exhibits = User.find(params[:user_id]).exhibits
-    elsif params[:category_id]
-        @exhibits = Category.find(params[:category_id]).exhibits
+    elsif params[:museum_id]
+        @exhibits = Museum_id.find(params[:museum_id]).exhibits
     else
-      @exhibits = Category.all
+      @exhibits = Museum.all
     end
   end
 
@@ -33,9 +33,9 @@ class ExhibitsController < ApplicationController
 
   def edit
   selected_exhibit
-  @category = Category.find_by(id: params[:category_id])
+  @museum = Museum.find_by(id: params[:museum_id])
     if @exhibit.user_id != current_user.id
-      redirect_to categories_path
+      redirect_to museums_path
     end
   end
 
@@ -54,7 +54,7 @@ class ExhibitsController < ApplicationController
   private
 
   def exhibit_params
-    params.require(:exhibit).permit(:user_id, :category_id, :name, :origin, :age)
+    params.require(:exhibit).permit(:user_id, :museum_id, :name, :origin, :age)
   end
 
   def selected_exhibit

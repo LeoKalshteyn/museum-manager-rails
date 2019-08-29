@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :categories
+  resources :museums
   resources :users
 
   root 'sessions#home'
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :exhibits , only: [:show, :index]
   end
 
-  resources :categories , only: [:new, :show] do
+  resources :museums , only: [:new, :show] do
     resources :exhibits , only: [:show, :index]
   end
 

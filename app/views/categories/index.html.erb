@@ -1,9 +1,0 @@
-<h3>Categories:</h3><br>
-
-<% @categories.each do |category| %>
-<%= link_to category.culture, category_path(category) %> - <%=category.exhibit_type%>, <%=category.materials%><br>
-<% end %>
-
-
-<%= link_to "My exhibits", user_path(current_user) %> <br>
-<%= link_to "Add a new exhibit", '/exhibit/new' %> <br>

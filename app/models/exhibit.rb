@@ -1,4 +1,9 @@
 class Exhibit < ApplicationRecord
   belongs_to :user
-  belongs_to :category
+  belongs_to :museum
+
+  def exhibit_count
+    exhibit.count
+  end
+  
 end

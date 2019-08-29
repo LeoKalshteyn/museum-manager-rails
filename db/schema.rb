@@ -12,26 +12,28 @@
 
 ActiveRecord::Schema.define(version: 2019_08_28_213536) do
 
-  create_table "categories", force: :cascade do |t|
-    t.string "culture"
-    t.string "exhibit_type"
-    t.string "museum"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "exhibits", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "category_id"
+    t.integer "museum_id"
     t.string "name"
     t.string "origin"
     t.string "age"
     t.string "description"
     t.string "material"
+    t.string "culture"
+    t.string "exhibit_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "open_date"
     t.datetime "close_date"
+  end
+
+  create_table "museums", force: :cascade do |t|
+    t.string "city"
+    t.string "country"
+    t.string "museum_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
