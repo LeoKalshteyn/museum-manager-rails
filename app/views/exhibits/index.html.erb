@@ -1,8 +1,10 @@
 <h3>All Exhibits</h3>
 
-<ol>
+<table>
+
   <% @exhibits.each do |exhibit| %>
-  <li>
+
+  <tr>
     <td><%= exhibit.name exhibit_path(exhibit) %></td>
     <td><%= exhibit.origin exhibit_path(exhibit) %></td>
     <td><%= exhibit.age exhibit_path(exhibit) %></td>
@@ -12,10 +14,13 @@
     <td><%= exhibit.culture exhibit_path(exhibit) %></td>
     <td><%= exhibit.exhibit_type exhibit_path(exhibit) %></td>
     <td><%= exhibit.description exhibit_path(exhibit) %></td>
-    
-
     <td><%= exhibit.user.username%></td>
-  </li>
+  </tr>
 
   <% end %>
-</ol>
+</table>
+
+<div style="display: inline-block;"><%= link_to "View all Museums", museums_path %></div>
+<div style="display: inline-block;"><%= link_to "View all Exhibits", exhibits_path %></div>
+<div style="display: inline-block;"><%= link_to "Add a New Exhibit", new_exhibit_path %></div>
+<div style="display: inline-block;"><%= link_to "Back to Menu", user_path(current_user) %></div>

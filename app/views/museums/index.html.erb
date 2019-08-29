@@ -2,9 +2,9 @@
 
 <table>
   <tr>
-    <h3>Museum Name</h3>
-    <h3>City</h3>
-    <h3>Country</h3>
+    <th>Museum Name</th>
+    <th>City</th>
+    <th>Country</th>
   </tr>
 
   <% @museums.each do |museum| %>
@@ -19,4 +19,4 @@
 
 
 <%= link_to "View all Exhibits", exhibits_path %> <br>
-<%= link_to "Back to main", user_path(current_user) %> <br>
+<%= link_to "Back to Menu", user_path(current_user) %> <br>

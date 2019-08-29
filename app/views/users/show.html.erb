@@ -1,8 +1,11 @@
-<h4><%=@user.username%>'s Exhibits</h4>
+<h4><%=@user.username%>'s Latest Exhibits</h4>
 
   <% @user.exhibits.each do |exhibit| %>
       <p><%= exhibit.name %><p>
   <% end %>
+
+
+
 
 <div>
     <div style="display: inline-block;"><%= link_to "View all Museums", museums_path %></div>
