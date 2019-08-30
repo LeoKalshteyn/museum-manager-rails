@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
+  get 'most_exhibits' => 'museums#most_exhibits'
+
   resources :exhibits, only: [:index, :new, :show, :create]
 
   resources :users , only: [:new, :show] do

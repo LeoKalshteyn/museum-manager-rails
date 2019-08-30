@@ -5,7 +5,7 @@
 <div>
 ----- <br>
 <b>Exhibit <%= index+1 %><br></b>
-Name: <%= exhibit.name  %><br>
+Name: <%= link_to exhibit.name, exhibit_path(exhibit)  %><br>
 Origin:  <%= exhibit.origin  %><br>
 Age:  <%= exhibit.age  %><br>
 Material:  <%= exhibit.material %><br>

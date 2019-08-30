@@ -1,7 +1,7 @@
 <h4><%=@user.username%>'s 5 Latest Exhibits</h4>
 
   <% @user.exhibits[0..5].each do |exhibit| %>
-      <p><%= exhibit.name %><p>
+      <p><%= link_to exhibit.name, exhibit_path(exhibit) %><p>
   <% end %>
 
 

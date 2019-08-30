@@ -5,5 +5,5 @@ class Exhibit < ApplicationRecord
   def exhibit_count
     exhibit.count
   end
-  
+
 end
