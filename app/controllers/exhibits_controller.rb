@@ -21,14 +21,14 @@ class ExhibitsController < ApplicationController
     if params[:user_id]
       @exhibits = User.find(params[:user_id]).exhibits
     elsif params[:museum_id]
-        @exhibits = Museum_id.find(params[:museum_id]).exhibits
+      @exhibits = Museum_id.find(params[:museum_id]).exhibits
     else
-      @exhibits = Museum.all
+      @exhibits = Exhibit.all
     end
   end
 
   def show
-    @exhibits = Exhibit.find_by_id(params[:id])
+    @exhibit = Exhibit.find_by_id(params[:id])
   end
 
   def edit
@@ -54,7 +54,7 @@ class ExhibitsController < ApplicationController
   private
 
   def exhibit_params
-    params.require(:exhibit).permit(:user_id, :museum_id, :name, :origin, :age)
+    params.require(:exhibit).permit(:user_id, :museum_id, :name, :origin, :age, :material, :culture, :exhibit_type, :open_date, :close_date, :description)
   end
 
   def selected_exhibit

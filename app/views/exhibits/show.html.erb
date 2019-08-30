@@ -7,9 +7,9 @@ Age: <%= @exhibit.age %><br>
 Material: <%= @exhibit.material %><br>
 Culture: <%= @exhibit.culture %><br>
 Exhibit Type: <%= @exhibit.exhibit_type %><br>
-<br> <br>
+Description: <%= @exhibit.description %><br><br>
 Open Date:<%= @exhibit.open_date %><br>
-Close Date <%= @exhibit.close_date %><br>
+Close Date <%= @exhibit.close_date %><br><br>
 
 <% if current_user == @exhibit.user %>
   <%= link_to "Edit Exhibit", edit_museum_exhibit_path(@exhibit.museum, @exhibit) if @exhibit.museum %><br>
@@ -24,9 +24,4 @@ Close Date <%= @exhibit.close_date %><br>
     <div style="display: inline-block;"><%= link_to "View all Exhibits", exhibits_path %></div>
     <div style="display: inline-block;"><%= link_to "Add a New Exhibit", new_exhibit_path %></div>
     <div style="display: inline-block;"><%= link_to "Back to Menu", user_path(current_user) %></div>
-    <br>
-    <% if current_user == @exhibit.user %>
-    <div style="display: inline-block;"><%= link_to "Edit Exhibit", edit_museum_exhibit_path(@exhibit.museum, @exhibit) if @exhibit.museum %></div>
-    <div style="display: inline-block;"><%= link_to 'Delete Exhibit',  exhibit_path(@exhibit), data: { confirm: 'Are you sure you want to delete this exhibit?' }, method: :delete %></div>
-    <% end %>
 </div>

@@ -3,6 +3,13 @@
 City: <%= @museum.city %><br>
 Country: <%= @museum.country %><br>
 <br>
+<p>Number of exhibits in this museum: <%=@count_exhibits%></p>
 
-<p>Number of exhibits per museum: <%=@museum.exhibit.count%> - <%= link_to "View Exhibits", museum_exhibits_path(@exhibit) %></p>
+<% @exhibits.each_with_index do |exhibit,index| %>
+<div>
+----- <br>
+<b>Exhibit <%= index+1 %><br></b>
+Name: <%= exhibit.name  %><br>
+<% end %>
+<br>
 <p><%= link_to "Back to Museums", museums_path %></p>

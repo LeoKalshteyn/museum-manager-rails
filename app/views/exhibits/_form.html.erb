@@ -1,6 +1,9 @@
 <%= form_for @exhibit do |f| %>
 <%= f.hidden_field :user_id, :value=> session[:user_id] %>
 
+    <%= f.label :museum_id, "Choose Museum" %>
+    <%= f.collection_select :museum_id, Museum.all, :id, :museum_name, prompt: true %><br><br>
+
     <%= f.label :name %>
     <%= f.text_field :name %><br>
 

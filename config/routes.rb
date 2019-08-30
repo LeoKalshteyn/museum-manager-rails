@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :museums
   resources :users
+  resources :exhibits
 
   root 'sessions#home'
 
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :museums , only: [:new, :show] do
-    resources :exhibits , only: [:show, :index]
+    resources :exhibits , only: [:show, :index, :edit]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

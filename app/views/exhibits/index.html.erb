@@ -1,24 +1,24 @@
 <h3>All Exhibits</h3>
 
-<table>
 
-  <% @exhibits.each do |exhibit| %>
+  <% @exhibits.each_with_index do |exhibit,index| %>
+<div>
+----- <br>
+<b>Exhibit <%= index+1 %><br></b>
+Name: <%= exhibit.name  %><br>
+Origin:  <%= exhibit.origin  %><br>
+Age:  <%= exhibit.age  %><br>
+Material:  <%= exhibit.material %><br>
+Culture:  <%= exhibit.culture %><br>
+Exhibit Type:  <%= exhibit.exhibit_type  %><br>
+Description:  <%= exhibit.description  %><br>
+Creator:  <%= exhibit.user.username%><br><br>
 
-  <tr>
-    <td><%= exhibit.name exhibit_path(exhibit) %></td>
-    <td><%= exhibit.origin exhibit_path(exhibit) %></td>
-    <td><%= exhibit.age exhibit_path(exhibit) %></td>
-    <td><%= exhibit.material exhibit_path(exhibit) %></td>
-    <td><%= exhibit.open_date exhibit_path(exhibit) %></td>
-    <td><%= exhibit.close_date exhibit_path(exhibit) %></td>
-    <td><%= exhibit.culture exhibit_path(exhibit) %></td>
-    <td><%= exhibit.exhibit_type exhibit_path(exhibit) %></td>
-    <td><%= exhibit.description exhibit_path(exhibit) %></td>
-    <td><%= exhibit.user.username%></td>
-  </tr>
-
+Open Date:  <%= exhibit.open_date %><br>
+Close Date:  <%= exhibit.close_date  %><br>
+</div>
   <% end %>
-</table>
+
 
 <div style="display: inline-block;"><%= link_to "View all Museums", museums_path %></div>
 <div style="display: inline-block;"><%= link_to "View all Exhibits", exhibits_path %></div>

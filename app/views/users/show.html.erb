@@ -1,9 +1,8 @@
-<h4><%=@user.username%>'s Latest Exhibits</h4>
+<h4><%=@user.username%>'s 5 Latest Exhibits</h4>
 
-  <% @user.exhibits.each do |exhibit| %>
+  <% @user.exhibits[0..5].each do |exhibit| %>
       <p><%= exhibit.name %><p>
   <% end %>
-
 
 
 
