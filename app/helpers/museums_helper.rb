@@ -4,5 +4,4 @@ module MuseumsHelper
     Exhibit.where(museum_id: museum_id).count
   end
 
-
 end
