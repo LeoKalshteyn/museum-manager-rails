@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
+  get "/auth/github/callback" => "sessions#create"
+
+
   get 'most_exhibits' => 'museums#most_exhibits'
 
   resources :exhibits, only: [:index, :new, :show, :create]
