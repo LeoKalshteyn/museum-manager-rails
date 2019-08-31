@@ -19,6 +19,12 @@
 
    /* Set gray background color and 100% height */
 
+   .home {
+     background-color: ;
+
+   }
+
+
    .sidenav {
      padding-top: 20px;
      background-color: #f1f1f1;
@@ -34,18 +40,22 @@
    }
 
    .header {
+     font-size: 30px;
+     padding-bottom: 15px;
      margin: 0 auto;
+     background-color: #808080;
      height: 60px;
-     font-size: 19px;
    }
 
-   .main-container h4 {
+   .wrapper {
+     padding: 15px;
      margin: 0 auto;
+     background-color: #808080;
    }
 
-   .main-container h3 {
-     font-size: 19px;
-     padding-top: 10px;
+   .logout {
+     font-size: 15px;
+     padding-bottom: 10px;
    }
 
  </style>
@@ -57,6 +67,32 @@
   <div class="bigimg">
       <img src="/images/acropolis.jpg" alt="acropolis" style="width: 50%">
   </div>
+
+    <!-- Top Navbar -->
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Menu</a></li>
+          <li><a href="#"><%= link_to "Exhibits", exhibits_path %></a></li>
+          <li><a href="#"><%= link_to "Museums", museums_path %></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+        <%= submit_tag "Log Out" %>
+          <% else %>
+            <li><a href="#"><%= link_to "Login", login_path %></a></li>
+            <li><a href="#"><%= link_to "Sign Up", signup_path %></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <!-- left nav imgs -->
 
@@ -70,18 +106,28 @@
    </div>
 
 
-
    <div class="col-sm-8 text-center">
+      <div class="wrapper">
 
 
      <!-- Header -->
      <header class="header">
        <span class="header">Museum Manager</span>
      </header>
-<%= yield %>
 
+    <div class="logout">
+      <%= form_tag logout_path do %>
+      <% if current_user %>
+        <%= submit_tag "Log Out" %>
+        <% end %>
+      <% end %>
+    </div>
 
+    <%= yield %>
+
+     </div>
    </div>
+
 
      <!-- right nav imgs -->
 
@@ -96,8 +142,5 @@
  </div>
 </div>
 
-<%= form_tag logout_path do %>
-  <%= submit_tag "Log Out" %>
-<% end %>
 </body>
 </html>
