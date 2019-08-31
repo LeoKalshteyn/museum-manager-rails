@@ -4,7 +4,10 @@
       <p><%= link_to exhibit.name, exhibit_path(exhibit) %><p>
   <% end %>
 
-
+  <h5>Recently Arrived Exhibits</h5>
+    <%@user.exhibits.arrived.each do |exhibit| %>
+    <%=exhibit.museum.museum_name%> - <%=exhibit.name%><br>
+  <%end%>
 
 <div>
     <div style="display: inline-block;"><%= link_to "View all Museums", museums_path %></div>

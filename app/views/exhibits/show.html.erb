@@ -10,6 +10,7 @@ Exhibit Type: <%= @exhibit.exhibit_type %><br>
 Description: <%= @exhibit.description %><br><br>
 Open Date:<%= @exhibit.open_date %><br>
 Close Date <%= @exhibit.close_date %><br><br>
+Transit Status: <%= @exhibit.transit_status.status %><br>
 
 <% if current_user == @exhibit.user %>
   <%= link_to "Edit Exhibit", edit_museum_exhibit_path(@exhibit.museum, @exhibit) if @exhibit.museum %><br>

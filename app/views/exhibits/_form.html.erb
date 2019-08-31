@@ -31,6 +31,9 @@
     <%= f.label :description %>
     <%= f.text_area :description %><br>
 
+    <%= f.label :transit_status_id, "Transit Status" %>
+    <%= f.collection_select :transit_status_id, TransitStatus.all, :id, :status, prompt: true %><br><br> %><br>
+
     <%= f.submit "Submit" %>
 
 <% end %>

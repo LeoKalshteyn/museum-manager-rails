@@ -14,3 +14,7 @@ User.delete_all
 Museum.create(:museum_name=>'MET', :city=>'New York City', :country=>'United States')
 Museum.create(:museum_name=>'Hermitage', :city=>'St. Petersburg', :country=>'Russia')
 Museum.create(:museum_name=>'The Louvre', :city=>'Paris', :country=>'France')
+
+TransitStatus.create(:status=>'Has not left original location')
+TransitStatus.create(:status=>'In transit')
+TransitStatus.create(:status=>'Has Arrived to destination')

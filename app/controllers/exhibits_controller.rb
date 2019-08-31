@@ -3,6 +3,7 @@ class ExhibitsController < ApplicationController
 
   def new
     @exhibit = Exhibit.new
+    @transit_statuses = TransitStatus.all
   end
 
   def create
@@ -54,7 +55,7 @@ class ExhibitsController < ApplicationController
   private
 
   def exhibit_params
-    params.require(:exhibit).permit(:user_id, :museum_id, :name, :origin, :age, :material, :culture, :exhibit_type, :open_date, :close_date, :description)
+    params.require(:exhibit).permit(:user_id, :museum_id, :name, :origin, :age, :material, :culture, :exhibit_type, :open_date, :close_date, :transit_status_id, :description)
   end
 
   def selected_exhibit

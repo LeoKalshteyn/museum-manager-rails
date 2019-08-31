@@ -14,8 +14,9 @@ Exhibit Type:  <%= exhibit.exhibit_type  %><br>
 Description:  <%= exhibit.description  %><br>
 Creator:  <%= exhibit.user.username%><br><br>
 
-Open Date:  <%= exhibit.open_date %><br>
-Close Date:  <%= exhibit.close_date  %><br>
+Transit Status: <%= exhibit.transit_status_id  %><br>
+Open Date:  <%= exhibit.open_date.strftime("%b %d, %Y") %><br>
+Close Date:  <%= exhibit.close_date.strftime("%b %d, %Y")  %><br>
 </div>
   <% end %>
 

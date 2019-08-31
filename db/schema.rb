@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_31_065816) do
+ActiveRecord::Schema.define(version: 2019_08_31_175050) do
 
   create_table "exhibits", force: :cascade do |t|
     t.integer "user_id"
@@ -26,12 +26,19 @@ ActiveRecord::Schema.define(version: 2019_08_31_065816) do
     t.datetime "updated_at", null: false
     t.datetime "open_date"
     t.datetime "close_date"
+    t.integer "transit_status_id"
   end
 
   create_table "museums", force: :cascade do |t|
     t.string "city"
     t.string "country"
     t.string "museum_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transit_statuses", force: :cascade do |t|
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

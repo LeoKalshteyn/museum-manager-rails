@@ -1,6 +1,7 @@
 class Exhibit < ApplicationRecord
   belongs_to :user
   belongs_to :museum
+  belongs_to :transit_status
 
   scope :most_exhibits, -> {
     select('exhibits.*, COUNT(exhibits.museum_id) AS museums_count')
@@ -9,8 +10,8 @@ class Exhibit < ApplicationRecord
     .limit(1)
   }
 
-  def exhibit_count
-    exhibit.count
+  def self.arrived
+    where(transit_status_id: 3)
   end
 
 end
