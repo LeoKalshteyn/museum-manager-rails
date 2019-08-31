@@ -5,6 +5,11 @@ class MuseumsController < ApplicationController
 
   def index
     @museums = Museum.all
+    most_exhibits = Exhibit.most_exhibits
+    most_exhibits.each do |museum|
+     @top_museum = MuseumsHelper.get_museum_name(museum.museum_id)[0]
+    end
+
   end
 
   def show
