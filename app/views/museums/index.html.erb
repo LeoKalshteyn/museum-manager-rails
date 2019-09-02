@@ -1,7 +1,10 @@
-<h3>Museums:</h3><br>
-Museum with most exhibits : <%= @top_museum.museum_name %>
+<h3>All Museums</h3><br>
 
-<table>
+<div class="most-exhibits" style="text-align:center">
+Museum with most exhibits : <%= @top_museum.museum_name %>
+</div>
+
+<table align="center">
   <tr>
     <th>Museum Name</th>
     <th>City</th>
@@ -16,7 +19,7 @@ Museum with most exhibits : <%= @top_museum.museum_name %>
     <td><%=museum.country%></td>
   </tr>
   <% end %>
-</table>
+</table><br>
 
 
 <%= link_to "View all Exhibits", exhibits_path %> <br>

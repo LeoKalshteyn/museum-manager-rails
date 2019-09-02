@@ -24,15 +24,23 @@
 
    }
 
+   table, th, td {
+     border: 1px solid black;
+     border-collapse: collapse;
+     }
+     th, td {
+     padding: 15px;
+   }
 
    .sidenav {
      padding-top: 20px;
-     background-color: #f1f1f1;
+     background-color: #808080;
      height: 100%;
    }
 
    .bigimg {
-
+     height: 5px;
+     width: ;
    }
 
    .smallimg {
@@ -53,10 +61,15 @@
      background-color: #808080;
    }
 
-   .logout {
-     font-size: 15px;
-     padding-bottom: 10px;
+   .well {
+     background-color: #808080;
    }
+
+   .most-exhibits {
+     padding-bottom: 15px;
+   }
+
+
 
  </style>
 
@@ -65,7 +78,7 @@
      <!-- Top img -->
 
   <div class="bigimg">
-      <img src="/images/acropolis.jpg" alt="acropolis" style="width: 50%">
+      <img src="/images/acropolis.jpg" alt="acropolis" style="width: 100%">
   </div>
 
     <!-- Top Navbar -->
@@ -78,13 +91,12 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li><a href="#">Menu</a></li>
           <li><a href="#"><%= link_to "Exhibits", exhibits_path %></a></li>
           <li><a href="#"><%= link_to "Museums", museums_path %></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-        <%= submit_tag "Log Out" %>
+            <li><a href="#"><%= link_to "Logout", logout_path %></a></li>
           <% else %>
             <li><a href="#"><%= link_to "Login", login_path %></a></li>
             <li><a href="#"><%= link_to "Sign Up", signup_path %></a></li>
@@ -97,11 +109,13 @@
     <!-- left nav imgs -->
 
    <div class="col-sm-2 sidenav">
-     <div class="well">
-       <img src="/images/egyptian.jpg" alt="egyptian" style="width: 100%">
-     </div>
-     <div class="well">
-       <img src="/images/flintlock.jpg" alt="flintlock" style="width: 100%">
+     <div class="wrapper">
+       <div class="well">
+         <img src="/images/egyptian.jpg" alt="egyptian" style="width: 100%">
+       </div>
+       <div class="well">
+         <img src="/images/flintlock.jpg" alt="flintlock" style="width: 100%">
+       </div>
      </div>
    </div>
 
@@ -115,13 +129,6 @@
        <span class="header">Museum Manager</span>
      </header>
 
-    <div class="logout">
-      <%= form_tag logout_path do %>
-      <% if current_user %>
-        <%= submit_tag "Log Out" %>
-        <% end %>
-      <% end %>
-    </div>
 
     <%= yield %>
 
@@ -132,12 +139,14 @@
      <!-- right nav imgs -->
 
    <div class="col-sm-2 sidenav">
-     <div class="well">
-       <img src="/images/painting.jpeg" alt="painting" style="width: 100%">
-     </div>
-     <div class="well">
-       <img src="/images/flintlock.jpg" alt="flintlock" style="width: 100%">
-     </div>
+     <div class="wrapper">
+       <div class="well">
+         <img src="/images/painting.jpeg" alt="painting" style="width: 100%">
+       </div>
+       <div class="well">
+         <img src="/images/flintlock.jpg" alt="flintlock" style="width: 100%">
+       </div>
+    </div>
    </div>
  </div>
 </div>

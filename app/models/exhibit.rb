@@ -12,6 +12,7 @@ class Exhibit < ApplicationRecord
 
   def self.arrived
     where(transit_status_id: 3)
+    .limit(4)
   end
 
 end

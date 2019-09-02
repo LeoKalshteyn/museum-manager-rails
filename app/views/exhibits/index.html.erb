@@ -1,5 +1,7 @@
 <h3>All Exhibits</h3>
 
+<div style="display: inline-block;"><%= link_to "Add a New Exhibit", new_exhibit_path %></div> <br>
+<div style="display: inline-block;"><%= link_to "Back to Menu", user_path(current_user) %></div> <br>
 
   <% @exhibits.each_with_index do |exhibit,index| %>
 <div>
@@ -14,14 +16,8 @@ Exhibit Type:  <%= exhibit.exhibit_type  %><br>
 Description:  <%= exhibit.description  %><br>
 Creator:  <%= exhibit.user.username%><br><br>
 
-Transit Status: <%= exhibit.transit_status_id  %><br>
+Transit Status: <%= exhibit.transit_status.status  %><br>
 Open Date:  <%= exhibit.open_date.strftime("%b %d, %Y") %><br>
 Close Date:  <%= exhibit.close_date.strftime("%b %d, %Y")  %><br>
 </div>
   <% end %>
-
-
-<div style="display: inline-block;"><%= link_to "View all Museums", museums_path %></div>
-<div style="display: inline-block;"><%= link_to "View all Exhibits", exhibits_path %></div>
-<div style="display: inline-block;"><%= link_to "Add a New Exhibit", new_exhibit_path %></div>
-<div style="display: inline-block;"><%= link_to "Back to Menu", user_path(current_user) %></div>
