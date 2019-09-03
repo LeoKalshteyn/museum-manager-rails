@@ -7,14 +7,12 @@ class ExhibitsController < ApplicationController
   end
 
   def create
-    if current_user
-      @user = current_user
-      @exhibit = @user.exhibits.build(exhibit_params)
-        if @exhibit.save
-          redirect_to @exhibit
-        end
+    @exhibit = current_user.exhibits.build(exhibit_params)
+    if @exhibit.valid?
+      @exhibit.save
+      redirect_to @exhibit
     else
-      redirect :new
+      render :new
     end
   end
 

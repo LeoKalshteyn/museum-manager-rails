@@ -1,8 +1,28 @@
 <%= form_for @exhibit do |f| %>
 <%= f.hidden_field :user_id, :value=> session[:user_id] %>
 
+    <% if @exhibit.errors.any? %>
+      <div>
+      <h4 style="color:red">
+      Please enter the required fields.<br>
+      </h4>
+        <ul style="color:red">
+        <% @exhibit.errors.full_messages.each do |msg| %>
+          <li style="color:red"><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <br>
+
+    <% if @exhibit.errors[:museum_id].empty? %>
+      <div class="wrapper">
+    <% else %>
+      <div class="field_with_errors">
+    <% end %>
     <%= f.label :museum_id, "Choose Museum" %>
     <%= f.collection_select :museum_id, Museum.all, :id, :museum_name, prompt: true %><br><br>
+    </div>
 
     <%= f.label :name %>
     <%= f.text_field :name %><br>
@@ -31,8 +51,14 @@
     <%= f.label :description %>
     <%= f.text_area :description %><br>
 
+    <% if @exhibit.errors[:transit_status_id].empty? %>
+      <div class="wrapper">
+    <% else %>
+      <div class="field_with_errors">
+    <% end %>
     <%= f.label :transit_status_id, "Transit Status" %>
     <%= f.collection_select :transit_status_id, TransitStatus.all, :id, :status, prompt: true %><br><br> %><br>
+    </div>
 
     <%= f.submit "Submit" %>
 
