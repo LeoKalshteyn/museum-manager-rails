@@ -1,14 +1,12 @@
-<h4><%=@user.username%>'s 5 Latest Exhibits</h4>
+<h4> Logged in as <%=@user.username%></h4>
 
-  <% @user.exhibits[0..5].each do |exhibit| %>
-      <p><%= link_to exhibit.name, exhibit_path(exhibit) %><p>
-  <% end %>
+<h4><%= link_to "View Current User's Exhibits", user_exhibits_path(@user) %></h4>
 
   <h5><%=@user.username%>'s Recently Arrived Exhibits</h5>
     <%@user.exhibits.arrived.each do |exhibit| %>
-    <%=exhibit.museum.museum_name%> - <%=exhibit.name%><br>
+    <%=exhibit.museum.museum_name%> - <%=exhibit.name%><br><br>
   <%end%>
 
-<div>
-    <div style="display: inline-block;"><%= link_to "Add a New Exhibit", new_exhibit_path %></div>
-</div>
+  <% if current_user.id == @user.id %>
+  <%= link_to "Edit Profile", edit_user_path %><br>
+  <% end %>
