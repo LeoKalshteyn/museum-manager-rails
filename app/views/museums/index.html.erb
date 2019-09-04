@@ -1,7 +1,11 @@
 <h3>Museum List</h3><br>
 
 <div class="most-exhibits" style="text-align:center">
-Museum with most exhibits : <%= @top_museum.museum_name %>
+  <% if @top_museum.present? %>
+Museum with most exhibits: <%= @top_museum.museum_name %>
+  <% else %>
+  <span>Museum with most exhibits: No Exhibits</span>
+<% end %>
 </div>
 
 <table align="center">

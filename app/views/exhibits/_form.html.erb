@@ -57,7 +57,7 @@
       <div class="field_with_errors">
     <% end %>
     <%= f.label :transit_status_id, "Transit Status" %>
-    <%= f.collection_select :transit_status_id, TransitStatus.all, :id, :status, prompt: true %><br><br> %><br>
+    <%= f.collection_select :transit_status_id, TransitStatus.all, :id, :status, prompt: true %><br><br>
     </div>
 
     <%= f.submit "Submit" %>
