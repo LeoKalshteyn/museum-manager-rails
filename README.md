@@ -1,24 +1,13 @@
-# README
+# Museum Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app allows you to take the role of a museum manager where you can add, track and manage exhibits.
 
-Things you may want to cover:
+# Installation:
 
-* Ruby version
+- Clone this Repo
+- Run 'bundle install' from the root directory
+- Run 'rails db:migrate'
+- Run 'rails db:seed' to see the museums
+- Run 'thin start --ssl' to start up a server
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Video Walkthrough](https://youtu.be/kg6SMv52VWk)

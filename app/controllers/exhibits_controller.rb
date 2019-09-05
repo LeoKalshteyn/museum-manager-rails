@@ -1,6 +1,7 @@
 class ExhibitsController < ApplicationController
   before_action :require_logged_in
 
+  # new exhibit 
   def new
     @exhibit = Exhibit.new
     @transit_statuses = TransitStatus.all
@@ -16,6 +17,7 @@ class ExhibitsController < ApplicationController
     end
   end
 
+  # index for all exhibits
   def index
     if params[:user_id]
       @exhibits = User.find(params[:user_id]).exhibits
@@ -26,6 +28,7 @@ class ExhibitsController < ApplicationController
     end
   end
 
+  # show selected exhibit
   def show
     @exhibit = Exhibit.find_by_id(params[:id])
   end

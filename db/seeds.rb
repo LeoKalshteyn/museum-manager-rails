@@ -10,10 +10,16 @@ Exhibit.delete_all
 Museum.delete_all
 User.delete_all
 
-
-Museum.create(:museum_name=>'MET', :city=>'New York City', :country=>'United States')
-Museum.create(:museum_name=>'Hermitage', :city=>'St. Petersburg', :country=>'Russia')
-Museum.create(:museum_name=>'The Louvre', :city=>'Paris', :country=>'France')
+Museum.create(:museum_name=>'Metropolitan Museum of Art', :city=>'New York City', :country=>'United States')
+Museum.create(:museum_name=>'State Hermitage', :city=>'St. Petersburg', :country=>'Russia')
+Museum.create(:museum_name=>'Le Louvre', :city=>'Paris', :country=>'France')
+Museum.create(:museum_name=>'Smithsonian Institution', :city=>'Washington, D.C.', :country=>'United States')
+Museum.create(:museum_name=>'The Acropolis Museum', :city=>'Athens', :country=>'Greece')
+Museum.create(:museum_name=>'The British Museum', :city=>'London', :country=>'United Kingdom')
+Museum.create(:museum_name=>'The Prado', :city=>'Madrid', :country=>'Spain')
+Museum.create(:museum_name=>'The Vatican Museums', :city=>'Vatican City', :country=>'Italy')
+Museum.create(:museum_name=>'The Uffizi Gallery', :city=>'Florence', :country=>'Italy')
+Museum.create(:museum_name=>'Rijksmuseum', :city=>'Amsterdam', :country=>'Netherlands')
 
 TransitStatus.create(:status=>'Has not left original location')
 TransitStatus.create(:status=>'In transit')

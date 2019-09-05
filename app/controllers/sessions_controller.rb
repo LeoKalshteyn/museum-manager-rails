@@ -7,10 +7,12 @@ class SessionsController < ApplicationController
   def create
     if request.env["omniauth.auth"]
       auth = request.env["omniauth.auth"]
+      #Logged in with omniauth
       user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
       session[:user_id] = user.id
       redirect_to user_path(user.id)
     else
+      #login with username and email
       @user = User.find_by(username: params[:user][:username])
       if @user && @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
