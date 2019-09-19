@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :museums, through: :exhibits
 
   validates :username, :email, presence: true
-  validates :email, uniqueness: true
+  validates :username, uniqueness: true
 
   has_secure_password
 

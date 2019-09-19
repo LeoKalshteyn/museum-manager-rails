@@ -3,9 +3,10 @@ class MuseumsController < ApplicationController
   include MuseumsHelper
   include ExhibitsHelper
 
+  # most_exhibits scope iterates through all museums. Then top museum instance variable gets the musueum with most exhibits.
   def index
     @museums = Museum.all
-    most_exhibits = Exhibit.most_exhibits
+    most_exhibits = Museum.most_exhibits
     most_exhibits.each do |museum|
      @top_museum = MuseumsHelper.get_museum_name(museum.museum_id)[0]
     end

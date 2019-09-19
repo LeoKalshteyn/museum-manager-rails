@@ -2,7 +2,7 @@
 
 <h4><%= link_to "View Current User's Exhibits", user_exhibits_path(@user) %></h4>
 ----
-  <h5><b>Recently Arrived Exhibit's</b></h5>
+  <h5><b>Recently Arrived Exhibits</b></h5>
     <%@exhibits.arrived.each do |exhibit| %>
     <%=exhibit.museum.museum_name%> - <%=link_to exhibit.name, exhibit_path(exhibit) %><br><br>
   <%end%>

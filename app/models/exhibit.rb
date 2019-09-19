@@ -6,13 +6,9 @@ class Exhibit < ApplicationRecord
   validates :open_date, date: true
   validates :close_date, date: true
 
-
-  scope :most_exhibits, -> {
-    select('exhibits.*, COUNT(exhibits.museum_id) AS museums_count')
-    .group('museum_id')
-    .order('museums_count DESC')
-    .limit(1)
-  }
+  # MOVE SCOPE TO MUSEUMS MODEL
+  # review bcrypt and forms
+  #
 
   def self.arrived
     where(transit_status_id: 3)

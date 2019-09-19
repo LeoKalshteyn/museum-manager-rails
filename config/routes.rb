@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :museums
-  resources :users
-  resources :exhibits
-
   root 'sessions#home'
 
   get '/signup' => 'users#new'
@@ -11,18 +7,18 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get "/auth/github/callback" => "sessions#create"
-
+  get '/auth/github/callback' => 'sessions#create'
 
   get 'most_exhibits' => 'museums#most_exhibits'
 
-  resources :exhibits, only: [:index, :new, :show, :create]
+  resources :users , only: [:new, :create, :show, :edit, :update]
+  resources :exhibits
 
-  resources :users , only: [:new, :show] do
-    resources :exhibits , only: [:show, :index]
+  resources :users do
+    resources :exhibits , only: [:show, :index, :edit]
   end
 
-  resources :museums , only: [:new, :show] do
+  resources :museums , only: [:show, :index] do
     resources :exhibits , only: [:show, :index, :edit]
   end
 

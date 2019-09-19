@@ -1,7 +1,9 @@
 class ExhibitsController < ApplicationController
+  # requires logged in method in app controller to have current user logged in
   before_action :require_logged_in
+  before_action :selected_exhibit, only: [:show, :edit, :update, :destroy]
 
-  # new exhibit 
+  # method for new exhibit form
   def new
     @exhibit = Exhibit.new
     @transit_statuses = TransitStatus.all
@@ -9,15 +11,14 @@ class ExhibitsController < ApplicationController
 
   def create
     @exhibit = current_user.exhibits.build(exhibit_params)
-    if @exhibit.valid?
-      @exhibit.save
+    if @exhibit.save
       redirect_to @exhibit
     else
       render :new
     end
   end
 
-  # index for all exhibits
+  # shows all exhibits
   def index
     if params[:user_id]
       @exhibits = User.find(params[:user_id]).exhibits
@@ -28,13 +29,12 @@ class ExhibitsController < ApplicationController
     end
   end
 
-  # show selected exhibit
+  # shows an exhibit
   def show
-    @exhibit = Exhibit.find_by_id(params[:id])
+    selected_exhibit
   end
 
   def edit
-  selected_exhibit
   @museum = Museum.find_by(id: params[:museum_id])
     if @exhibit.user_id != current_user.id
       redirect_to museums_path
@@ -42,13 +42,11 @@ class ExhibitsController < ApplicationController
   end
 
   def update
-    exhibit = Exhibit.find(params[:id])
-    exhibit.update(exhibit_params)
-    redirect_to exhibit
+    @exhibit.update(exhibit_params)
+    redirect_to exhibits_path
   end
 
   def destroy
-    selected_exhibit
     @exhibit.destroy
     redirect_to exhibits_path
   end

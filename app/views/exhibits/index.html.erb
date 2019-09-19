@@ -13,11 +13,12 @@ Age:  <%= exhibit.age  %><br>
 Material:  <%= exhibit.material %><br>
 Culture:  <%= exhibit.culture %><br>
 Exhibit Type:  <%= exhibit.exhibit_type  %><br>
-Description:  <%= exhibit.description  %><br>
-Creator:  <%= exhibit.user.username%><br><br>
+Description:  <%= exhibit.description  %><br><br>
 
 Transit Status: <%= exhibit.transit_status.status  %><br>
 Open Date:  <%= exhibit.open_date.strftime("%b %d, %Y") %><br>
-Close Date:  <%= exhibit.close_date.strftime("%b %d, %Y")  %><br>
+Close Date:  <%= exhibit.close_date.strftime("%b %d, %Y")  %><br><br>
+
+Poster:  <%= exhibit.user.username%><br>
 </div>
   <% end %>

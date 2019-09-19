@@ -6,10 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Exhibit.delete_all
-Museum.delete_all
-User.delete_all
-
 Museum.create(:museum_name=>'Metropolitan Museum of Art', :city=>'New York City', :country=>'United States')
 Museum.create(:museum_name=>'State Hermitage', :city=>'St. Petersburg', :country=>'Russia')
 Museum.create(:museum_name=>'Le Louvre', :city=>'Paris', :country=>'France')
