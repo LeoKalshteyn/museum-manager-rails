@@ -1,0 +1,13 @@
+<% if model.errors.any? %>
+  <div>
+  <h4 style="color:red">
+  Please enter the required fields.<br>
+  </h4>
+    <ul style="color:red">
+    <% model.errors.full_messages.each do |msg| %>
+      <li style="color:red"><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<br>

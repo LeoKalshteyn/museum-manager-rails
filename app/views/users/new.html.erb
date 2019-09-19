@@ -2,14 +2,34 @@
 
 <%= form_for @user do |f| %>
 
+<%= render :partial => 'application/error_messages', :locals => {:model => @user} %>
+
+<% if @user.errors[:username].empty? %>
+  <div class="wrapper">
+<% else %>
+  <div class="field_with_errors">
+<% end %>
   <%= f.label :username %>
   <%= f.text_field :username %><br>
+  </div>
 
+<% if @user.errors[:email].empty? %>
+  <div class="wrapper">
+<% else %>
+  <div class="field_with_errors">
+<% end %>
   <%= f.label :email %>
   <%= f.email_field :email %><br>
+  </div>
 
+<% if @user.errors[:password].empty? %>
+  <div class="wrapper">
+<% else %>
+  <div class="field_with_errors">
+<% end %>
   <%= f.label :password %>
   <%= f.password_field :password %><br>
+  </div>
 
   <%= f.submit "Sign Up" %>
 
