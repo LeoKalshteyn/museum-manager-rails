@@ -2,7 +2,7 @@
 
 <%= form_for @user do |f| %>
 
-<%= render :partial => 'application/error_messages', :locals => {:model => @user} %>
+<%= render :partial => 'shared/error_messages', :locals => {:model => @user} %>
 
 <% if @user.errors[:username].empty? %>
   <div class="wrapper">

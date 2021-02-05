@@ -18,9 +18,11 @@ Rails.application.routes.draw do
     resources :exhibits , only: [:show, :index, :edit]
   end
 
-  resources :museums , only: [:show, :index] do
+  resources :museums , only: [:new, :create, :show, :index] do
     resources :exhibits , only: [:show, :index, :edit]
   end
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,7 +1,7 @@
 <%= form_for @exhibit do |f| %>
 <%= f.hidden_field :user_id, :value=> session[:user_id] %>
 
-<%= render :partial => 'application/error_messages', :locals => {:model => @exhibit} %>
+<%= render :partial => 'shared/error_messages', :locals => {:model => @exhibit} %>
 
     <% if @exhibit.errors[:museum_id].empty? %>
       <div class="wrapper">
