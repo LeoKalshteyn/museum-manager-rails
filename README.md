@@ -8,11 +8,11 @@ Because of my interest in museums and historical exhibits I thought why not make
 # Technologies
 The following technologies were used in the production of Cleverbreak:
 
-Ruby 2.6.0
-Rails 5.2.3
-Sqlite3
-Thin 10.13.0
-Omniauth-Github
+- Ruby 2.6.0
+- Rails 5.2.3
+- Sqlite3
+- Thin 10.13.0
+- Omniauth-Github
 
 # Features
 Currently, Museum Manager has the following features implemented:
