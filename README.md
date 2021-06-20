@@ -21,13 +21,13 @@ Github User Authentication
 
 New users have the ability to register an account on the sign-in page or sign up using github.
 
-<img src="./login.gif" alt="Login Gif" width="500" height="600">
+![screen-gif](./login.gif)
 
 Adding Exhibits
 
 A user can add exhibits will detailed information ranging the type of exhibit to the dates it will arrive at the specified museum.
 
-<img src="./exhibit.gif" alt="Exhibit GIF" width="500" height="600">
+![screen-gif](./exhibit.gif)
 
 # Installation:
 
